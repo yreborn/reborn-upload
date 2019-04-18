@@ -19,14 +19,14 @@ class FileUpload
      * User: Reborn
      * 2019/4/17 16:59:15
      */
-    public function upload_local(){
+    public function upload_local($url=null){
         $file = Request::file('file');
         // 移动到框架应用根目录/uploads/ 目录下
         $info = $file->move( './uploads');
         if($info){
             $data['url']=$info->getFilename();
-            $data['srcurl']=Config::get('upload_url').'/uploads/'.$info->getSaveName();
-            $data['baseurl']=Config::get('upload_url');
+            $data['srcurl']=$url.'/uploads/'.$info->getSaveName();
+            $data['baseurl']=$url;
             return $data;
         }else{
             throw new ParamException('文件上传失败');
@@ -42,7 +42,7 @@ class FileUpload
      * @throws ForbiddenException
      * @throws ParamException
      */
-    public function upload_online($type = true)
+    public function upload_online($type = true,$url='')
     {
         // 获取表单上传文件 例如上传了001.jpg
         $file = Request::file('file');
@@ -56,7 +56,6 @@ class FileUpload
             throw new ParamException('上传失败');
         }
 
-        $url=Config::get('upload_url');
         $image=$info->getSaveName();
         $path='./uploads/'.$image;
 
@@ -77,8 +76,8 @@ class FileUpload
         if (array_key_exists('result',$result) && $result['result']=='success'){
 
             $data['url']=$result['url'];
-            $data['srcurl']=Config::get('upload_url').$result['url'];
-            $data['baseurl']=Config::get('upload_url');
+            $data['srcurl']=$url.$result['url'];
+            $data['baseurl']=$url;
             return $data;
         }else{
             throw new ParamException('文件上传失败');

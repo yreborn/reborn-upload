@@ -11,5 +11,8 @@ namespace reborn\exception;
 
 class ParamException extends Exception
 {
-
+    public function __construct()
+    {
+        parent::__construct("数据错误");
+    }
 }
