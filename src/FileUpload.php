@@ -2,13 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: Reborn
- * Date: 2019/4/17
- * Time: 17:32
+ * Date: 2019/4/18
+ * Time: 15:49
  */
 
-namespace upload;
+namespace reborn;
 
-use upload\exception\ParamException;
+use reborn\exception\ParamException;
 use think\facade\Request;
 use think\facade\Config;
 
@@ -84,7 +84,7 @@ class FileUpload
             throw new ParamException('文件上传失败');
         }
     }
-    
+
     /**
      * 上传到指定服务器
      * Created by Reborn
