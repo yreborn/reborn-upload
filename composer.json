@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "reborn\\upload\\":"src/reborn/upload"
+            "reborn\\upload\\":"src/upload"
         }
     }
 }
