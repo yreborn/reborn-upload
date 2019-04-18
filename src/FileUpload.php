@@ -6,7 +6,7 @@
  * Time: 15:49
  */
 
-namespace reborn;
+namespace reborn\fileupload;
 
 use reborn\exception\ParamException;
 use think\facade\Request;
