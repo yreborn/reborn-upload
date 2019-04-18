@@ -6,7 +6,7 @@
  * Time: 9:38
  */
 
-namespace reborn\upload\exception;
+namespace  upload\exception;
 
 class Exception extends \Exception
 {
