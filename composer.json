@@ -1,0 +1,22 @@
+{
+    "name": "reborn/reborn-upload",
+    "description": "图片上传",
+    "type": "think",
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "reborn",
+            "email": "1395518942@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "topthink/think-installer": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "reborn\\upload\\":"src/reborn/upload"
+        }
+    }
+}
