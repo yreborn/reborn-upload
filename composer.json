@@ -18,5 +18,10 @@
         "psr-4": {
             "reborn\\fileupload\\":"src"
         }
+    },
+    "extra": {
+        "think-config": {
+            "sendsms": "src/config.php"
+        }
     }
 }
